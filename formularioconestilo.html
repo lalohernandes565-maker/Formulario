@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="styl.css">
+    <script src="js/formulario.js" defer></script>
+</head>
+<body>
+
+    <h1>Formulario de registro</h1>
+
+    <form action="#" method="get" id="formulario">
+
+        <p>
+            <label for="nombre">Nombre</label>
+            <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                maxlength="50"
+                required
+                oninvalid="this.setCustomValidity('Por favor, escribe tu nombre.')"
+                oninput="this.setCustomValidity('')"
+            >
+        </p>
+
+        <p>
+            <label for="apellidos">Apellidos</label>
+            <input
+                type="text"
+                name="apellidos"
+                id="apellidos"
+                maxlength="50"
+                required
+                oninvalid="this.setCustomValidity('Por favor, escribe tus apellidos.')"
+                oninput="this.setCustomValidity('')"
+            >
+        </p>
+
+        <p>
+            Sexo:
+            <input
+                type="radio"
+                name="sexo"
+                id="sexo-h"
+                value="h"
+                required
+            >
+            <label for="sexo-h">Hombre</label>
+
+            <input
+                type="radio"
+                name="sexo"
+                id="sexo-m"
+                value="m"
+            >
+            <label for="sexo-m">Mujer</label>
+        </p>
+
+        <p>
+            <label for="correo">Correo electrónico</label>
+            <input
+                type="email"
+                name="correo"
+                id="correo"
+                maxlength="100"
+                required
+                oninvalid="this.setCustomValidity(this.validity.valueMissing ? 'Por favor, escribe tu correo electrónico.' : 'Introduce un correo electrónico válido.')"
+                oninput="this.setCustomValidity('')"
+            >
+        </p>
+
+        <p>
+            <label for="estado">Población</label>
+            <select
+                name="estado"
+                id="estado"
+                required
+                oninvalid="this.setCustomValidity('Por favor, selecciona una población.')"
+                onchange="this.setCustomValidity('')"
+            >
+                <option value="">Selecciona una población</option>
+                <option value="Aguascalientes">Aguascalientes</option>
+                <option value="Baja California">Baja California</option>
+                <option value="Baja California Sur">Baja California Sur</option>
+                <option value="Campeche">Campeche</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="descripcion">Descripción</label>
+            <textarea
+                name="descripcion"
+                id="descripcion"
+                rows="6"
+                cols="60"
+                required
+                oninvalid="this.setCustomValidity('Por favor, escribe una descripción.')"
+                oninput="this.setCustomValidity('')"
+            ></textarea>
+        </p>
+
+        <p>
+            <input
+                type="checkbox"
+                name="info"
+                id="info"
+                checked
+            >
+            <label for="info">
+                Deseo recibir información sobre novedades y ofertas
+            </label>
+        </p>
+
+        <p>
+            <input
+                type="checkbox"
+                name="condiciones"
+                id="condiciones"
+                required
+                oninvalid="this.setCustomValidity('Debes aceptar las condiciones para continuar.')"
+                onchange="this.setCustomValidity('')"
+            >
+            <label for="condiciones">
+                Declaro haber leído y aceptar las condiciones generales
+                del programa y la normativa sobre protección de datos.
+            </label>
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+        </p>
+
+    </form>
+
+</body>
+</html>
